@@ -5,12 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOKEPON</title>
+    <script src="./js/mokepon.js"></script>
 </head>
 <body>
     
     <h1>MOKEPON! 🔥💦🌱</h1>
-    <p>
-        <button>Fuego 🔥</button>
-    </p>
+
+    <section id="seleccionar-mascota">
+        <h2>Elige tu mascota:</h2>
+
+        <label for="hipodoge">Hipodoge</label>
+        <input type="radio" name="mascota" id="hipodoge"/>
+
+        <label for="capipepo">Capipepo</label>
+        <input type="radio" name="mascota" id="capipepo"/>
+
+        <label for="ratigueya">Ratigueya</label>
+        <input type="radio" name="mascota" id="ratigueya"/>
+    
+        <!-- Botón para seleccionar mascota -->
+        <button id="boton-mascota">Seleccionar</button>
+    </section>    
+
+    <section id="seleccionar-ataque">
+        <h2>Elige tu ataque:</h2> 
+
+        <p> <span id="mascota-jugador">Tu mascota</span> tiene <span id="vidas-jugador">3</span> vidas.</p>
+        <p> <span id="mascota-enemigo">La mascota del enemigo</span> tiene <span id="vidas-enemigo">3</span> vidas.</p>
+
+        <p>
+            <button id="boton-fuego">Fuego 🔥</button>
+            <button id="boton-agua">Agua 💦</button>
+            <button id="boton-tierra">Tierra 🌱</button>
+        </p>
+
+    </section>
+
+    <section id="mensajes">
+        <!-- Estoe párrafo será dinámico con JS, ejemplo: -->
+       
+    </section>
+  
+    <section id="reiniciar">
+        
+    </section>
+
 </body>
 </html>
