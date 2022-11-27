@@ -9,9 +9,12 @@ function iniciarJuego() {
 
     let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
     sectionSeleccionarAtaque.style.display = "none"
+    
+    let sectionReiniciar = document.getElementById("reiniciar")
+    sectionReiniciar.style.display = "none"
 
     let botonMascotaJugador = document.getElementById("boton-mascota")
-botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador)
+    botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador)
 
     let botonFuego = document.getElementById("boton-fuego")
     botonFuego.addEventListener("click", ataqueFuego)
@@ -19,6 +22,9 @@ botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador)
     botonAgua.addEventListener("click", ataqueAgua)
     let botonTierra = document.getElementById("boton-tierra")
     botonTierra.addEventListener("click", ataqueTierra)
+
+    let botonReiniciar = document.getElementById("boton-reiniciar")
+    botonReiniciar.addEventListener("click", reiniciarJuego)
 
 }
 
@@ -38,24 +44,23 @@ function seleccionarMascotaJugador() {
         spanMascotaJugador.innerHTML = "Hipodoge"
         alert("Seleccionaste a Hipodoge")
         mascotaJugador = "Hipodoge"
-
     } else if (inputCapipepo.checked) {
         spanMascotaJugador.innerHTML = "Capipepo"
         alert("Seleccionaste a Capipepo")
         mascotaJugador = "Capipepo"
-
     } else if (inputRatigueya.checked) {
         spanMascotaJugador.innerHTML = "Ratigueya"
         alert("Seleccionaste a Ratigueya")
         mascotaJugador = "Ratigueya"
-
     } else {
         alert("Selecciona una mascota")
+        let sectionSeleccionarMascota = document.getElementById("seleccionar-mascota")
+        sectionSeleccionarMascota.style.display = "block"
+
+        let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
+        sectionSeleccionarAtaque.style.display = "none"
+        botonMascotaJugador = false
     }
-
-    let botonMascotaJugador = document.getElementById("boton-mascota")
-    botonMascotaJugador.disabled = true
-
     seleccionarMascotaEnemigo()
 }
 function seleccionarMascotaEnemigo() {
@@ -128,10 +133,9 @@ function combate() {
 function revisarVidas() {
     if (vidasEnemigo == 0) {
         crearMensajeFinal("FELICITACIONES GANASTE")
-        crearBotonReiniciar()
+
     } else if (vidasJugador == 0) {
         crearMensajeFinal("GAME OVER")
-        crearBotonReiniciar()
     } 
 }
 function crearMensaje(resultadoCombate) {
@@ -144,6 +148,9 @@ function crearMensaje(resultadoCombate) {
 }
 function crearMensajeFinal(resultadoFinal) {
     let sectionMensajes = document.getElementById("mensajes")
+
+    let sectionReiniciar = document.getElementById("reiniciar")
+    sectionReiniciar.style.display = "block"
     
     let parrafo = document.createElement("p")
     parrafo.innerHTML = resultadoFinal
@@ -157,14 +164,7 @@ function crearMensajeFinal(resultadoFinal) {
     let botonTierra = document.getElementById("boton-tierra")
     botonTierra.disabled = true
 }
-function crearBotonReiniciar () {
-    let sectionReiniciar = document.getElementById("reiniciar")
-    let botonReiniciar = document.createElement("button")
-    botonReiniciar.innerHTML = "Reiniciar"
 
-    sectionReiniciar.appendChild(botonReiniciar)
-    botonReiniciar.addEventListener("click", reiniciarJuego)
-}
 function reiniciarJuego(){
     location.reload()
 }
