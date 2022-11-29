@@ -139,15 +139,17 @@ function revisarVidas() {
     } 
 }
 function crearMensaje(resultadoCombate) {
-    let sectionMensajes = document.getElementById("mensajes")
-    let parrafo = document.createElement("p")
-    parrafo.innerHTML = mascotaJugador + " atacó con " + ataqueJugador + " " + mascotaEnemigo + " atacó con " + ataqueEnemigo + " por lo tanto " + resultadoCombate
 
-    sectionMensajes.appendChild(parrafo)
-
+    let sectionResultadoParcial = document.getElementById("resultado-parcial")
+    sectionResultadoParcial.innerHTML =  resultadoCombate
 }
+
+
 function crearMensajeFinal(resultadoFinal) {
-    let sectionMensajes = document.getElementById("mensajes")
+    let sectionResultadoParcial = document.getElementById("resultado-parcial")
+    sectionResultadoParcial.style.display = "none"
+
+    let sectionResultadoFinal = document.getElementById("resultado-final")
 
     let sectionReiniciar = document.getElementById("reiniciar")
     sectionReiniciar.style.display = "block"
@@ -155,7 +157,7 @@ function crearMensajeFinal(resultadoFinal) {
     let parrafo = document.createElement("p")
     parrafo.innerHTML = resultadoFinal
 
-    sectionMensajes.appendChild(parrafo)
+    sectionResultadoFinal.appendChild(parrafo)
 
     let botonFuego = document.getElementById("boton-fuego")
     botonFuego.disabled = true

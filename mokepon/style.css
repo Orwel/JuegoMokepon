@@ -73,3 +73,31 @@ input {
     color: white;
     font-family: 'Fredoka One', cursive;
 }
+
+#notificaciones {
+    width: 180px;
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+
+}
+
+#tarjetasMokepones {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.tarjetas-combate {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 230px;
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
