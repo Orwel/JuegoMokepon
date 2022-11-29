@@ -75,11 +75,15 @@ input {
 }
 
 #notificaciones {
+    display: flex;
+    flex-direction: column;
     width: 180px;
     background-color: white;
     padding: 20px;
     margin-top: 20px;
     border-radius: 20px;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -92,8 +96,7 @@ input {
 .tarjetas-combate {
     display: flex;
     flex-direction: column;
-    width: 150px;
-    height: 230px;
+    box-sizing: content-box;
     background-color: white;
     padding: 20px;
     margin-top: 20px;

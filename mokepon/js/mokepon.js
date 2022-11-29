@@ -81,14 +81,17 @@ function seleccionarMascotaEnemigo() {
 function ataqueFuego() {
     ataqueJugador = "FUEGO"
     ataqueAleatorioEnemigo()
+    crearMensaje2()
 }
 function ataqueAgua() {
     ataqueJugador = "AGUA"
     ataqueAleatorioEnemigo()
+    crearMensaje2()
 }
 function ataqueTierra() {
     ataqueJugador = "TIERRA"
     ataqueAleatorioEnemigo()
+    crearMensaje2()
 }
 function ataqueAleatorioEnemigo() {
     let ataqueAleatorio = aleatorio(1,3)
@@ -142,8 +145,24 @@ function crearMensaje(resultadoCombate) {
 
     let sectionResultadoParcial = document.getElementById("resultado-parcial")
     sectionResultadoParcial.innerHTML =  resultadoCombate
+ 
 }
 
+function crearMensaje2()  {
+
+    let tarjetaAtaqueJugador = document.getElementById("tarjetaAtaqueJugador")
+    let parrafo = document.createElement("p")
+    parrafo.innerHTML = ataqueJugador 
+
+    tarjetaAtaqueJugador.appendChild(parrafo)
+
+    let tarjetaAtaqueEnemigo = document.getElementById("tarjetaAtaqueEnemigo")
+    let parrafo2 = document.createElement("p")
+    parrafo2.innerHTML = ataqueEnemigo 
+
+    tarjetaAtaqueEnemigo.appendChild(parrafo2)
+
+ }
 
 function crearMensajeFinal(resultadoFinal) {
     let sectionResultadoParcial = document.getElementById("resultado-parcial")
